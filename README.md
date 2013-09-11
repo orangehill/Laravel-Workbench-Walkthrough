@@ -32,7 +32,7 @@ Note that `orangehill` represents a vendor (company name, personal name etc.), a
 	class Walkthrough {
 
 		public static function hello(){
-			return "What's up Zagreb?";
+			return "What's up Zagreb!";
 		}
 
 	}
@@ -92,7 +92,7 @@ This allows the facade to work without the adding it to the Alias array in app/c
 		echo Walkthrough::hello();
 	});
 
-If all went well you should see the `What's up Zagreb?` output in your browser after visiting the test URL.
+If all went well you should see the `What's up Zagreb!` output in your browser after visiting the test URL.
 
 ## Adding an Artisan CLI Support
 
@@ -101,8 +101,8 @@ Following steps will allow yout to run your method from CLI.
 11) First, let's modify the `/workbench/orangehill/walkthrough/src/Orangehill/Walkthrough/Walkthrough.php` file to accept an optional parameter and echo out a message that we can observe in our CLI:
 
 	public static function hello($verb = 'up'){
-		if (PHP_SAPI == 'cli') echo "What's $verb Zagreb?\n";
-		return "What's up Zagreb?";
+		if (PHP_SAPI == 'cli') echo "What's $verb Zagreb!\n";
+		return "What's up Zagreb!";
 	}
 
 12) Create a file `WalkthroughCommand.php` inside `/workbench/orangehill/walkthrough/src/Orangehill/Walkthrough/` folder with following content (code is pretty much self-explanatory):
